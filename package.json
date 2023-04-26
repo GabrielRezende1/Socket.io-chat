@@ -1,0 +1,15 @@
+{
+  "name": "socket_io",
+  "version": "1.0.0",
+  "description": "Módulo 10",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Gabriel Santos Rezende",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  }
+}
