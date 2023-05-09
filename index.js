@@ -11,6 +11,7 @@ app.set("views", path.join(__dirname, "/views"));
 
 let usuarios = [];
 let socketIds = [];
+let areTyping = [];
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
@@ -41,7 +42,7 @@ io.on("connection", (socket) => {
 
   socket.on("user typing", (u) => {
     if (usuarios.indexOf(u.nome) != -1) {
-      //check is user exists
+      //check if user exists
       if (u.typing) socket.broadcast.emit("user typing", { nome: u.nome, typing: true });
       else socket.broadcast.emit("user typing", { nome: u.nome, typing: false });
     } else console.log("Erro: Você não tem permissão para executar a ação.");
